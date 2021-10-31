@@ -14,9 +14,9 @@
         <link href="css/adaptive.css" rel="stylesheet">
         
         <script src="js/jquery-3.6.0.min.js"></script>
-        
-        <script src="js/defs.js"></script>
-        
+		
+		<script src="js/defs.js"></script>
+			
         <script src="js/main.js"></script>
     </head>
 
@@ -27,13 +27,12 @@
                     <a href="index.html" class="logo"></a>
                 
                     <div class="searchline">
-					<input type="text" size="50" placeholder="Поиск товаров">
 					</div>
 					<p> &#128222; +7 (495) 000-00-00<br><br> Оформление заказов</p>
                     
                     <a href="#" class="headerlink" title="Войти"></a>
                     
-                    <a href="#" class="headerlink" title="Избранное"></a>
+                    <a href="order.html" class="headerlink" title="Корзина"></a>
                     
 
                 </div>
@@ -47,7 +46,7 @@
                         
                         <a href="catalog.html">Каталог</a>
                         
-                        <a href="item.html">Оплата</a>
+                        <a href="item.html">Товар</a>
                         
                         <a href="order.html">Доставка</a>
                         
@@ -68,11 +67,117 @@
         </header>
         
         <main>
+		<section class="catalog">
+		 <div class="container">
+			    <aside>
+                        <div class="accordeon">
+                            <div class="level1">
+                                <a href="#" class="menupoint">Женская одежда</a>
+                                
+                                <div class="level2">
+                                    <a href="#" class="menupoint">Купальники</a>
+									 <div class="level3">
+                                        <a href="#" class="menupoint">Слитные</a>
+                                    </div>
+                                    
+                                    <div class="level3">
+                                        <a href="#" class="menupoint">Раздельные</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="level2">
+                                    <a href="#" class="menupoint">Гидрокостюмы</a>
+                                    <div class="level3">
+                                        <a href="#" class="menupoint">Стартовые</a>
+                                    </div>
+                                    <div class="level3">
+                                        <a href="#" class="menupoint">Для открытой воды</a>
+                                    </div>
+
+                                </div>
+                                
+                                <div class="level2">
+                                    <a href="#" class="menupoint">Топы</a>
+                                </div>
+                                
+                                <div class="level2">
+                                    <a href="#" class="menupoint">Шорты</a>
+                                </div>
+                            </div>
+                            
+                            <div class="level1">
+                                <a href="#" class="menupoint">Мужская одежда</a>
+                            
+								  <div class="level2">
+                                    <a href="#" class="menupoint">Плавки</a>
+                                </div>
+								<div class="level2">
+                                    <a href="#" class="menupoint">Транки</a>
+                                </div>
+								 <div class="level2">
+                                    <a href="#" class="menupoint">Джаммеры</a>
+                                </div>
+								 <div class="level2">
+                                    <a href="#" class="menupoint">Гидрошорты</a>
+                                </div>
+								  <div class="level2">
+                                    <a href="#" class="menupoint">Поло</a>
+                                </div>
+								 <div class="level2">
+                                    <a href="#" class="menupoint">Брюки</a>
+                                </div>
+							</div>
+                            <div class="level1">
+                                <a href="#" class="menupoint">Аксессуары</a>
+                                
+                                <div class="level2">
+                                    <a href="#" class="menupoint">Ласты</a>
+                                </div>
+								 <div class="level2">
+                                    <a href="#" class="menupoint">Лопатки</a>
+                                </div>
+								 <div class="level2">
+                                    <a href="#" class="menupoint">Шапки</a>
+                                </div>
+								 <div class="level2">
+                                    <a href="catalog.html" class="menupoint">Очки</a>
+                                </div>
+								 <div class="level2">
+                                    <a href="#" class="menupoint">Трубки</a>
+                                </div>
+                                
+                                <div class="level2">
+                                    <a href="#" class="menupoint">Рюкзаки</a>
+                                </div>
+                            </div>
+                            
+                            <div class="level1">
+                                <a href="#" class="menupoint">Обувь</a>
+                                
+                                <div class="level2">
+                                    <a href="#" class="menupoint">Сланцы</a>
+                                </div>
+                                
+                                <div class="level2">
+                                    <a href="#" class="menupoint">Тапки для плавания</a>
+                                </div>
+                            </div>
+                            <div class="level1">
+                                <a href="#" class="menupoint">Электроника</a>
+                            </div>  
+                            <div class="level1">
+                                <a href="#" class="menupoint">Акции</a>
+                            </div>                        
+
+                        </div>
+                    </aside>
+		</div>
+			</section>
             <section class="actionband">
                 <div class="container">
                     <div class="discount">СКИДКА 30%!</div>
                     
-                    <div class="retaimer" data-fordate="11-01-2021">
+                    <div class="retaimer" data-fordate="11-08-2021">
                         <div class="toptext">до окончания акции осталось</div>
                         
                         <span class="num"></span>
@@ -91,7 +196,7 @@
                     </div>
                 </div>
             </section>
-            
+				
             <section class="slider">
                 <div class="container">
                     <div class="slider_desk">
@@ -211,25 +316,60 @@
             
         </main>
         
-        <footer>
-            <section class = "footer">
-                <div class="container">
-                <button type="button">Напишите нам</button>
-                
-                <p class="heading">Остались вопросы?</p>
-                
-                <p>Посетите наши специализированные магазины, чтобы оценить большой ассортимент и получить профессиональную консультацию по выбору.</p>
-            </div>
-            <hr>
-            <div class="container">
-                <ul>
-                    <li>Желаем приятных покупок!</li>
-                    <li value="ТЕЛ.">8-800-000-0000</li>
-                    <li value="E-mail">swm@gmail.com</li>
-                </ul>
-                <p class="copy"> 2021 &copy; SWIM WITH ME Все права защищены</p>
-                </div>
-            </section>
-        </footer>
+<footer>
+	<section class ="footer">
+			<div class="footer__wrap">
+				<nav class="footer-nav">
+					<ul>
+						<li><h3>Каталог</h3></li>
+						<li><a href="#">Женская одежда</a></li>
+						<li><a href="#">Мужская одежда</a></li>
+						<li><a href="#">Аксессуары</a></li>
+						<li><a href="#">Обувь</a></li>
+						<li><a href="#">Электроника</a></li>
+						<li><a href="#">Акции</a></li>
+					</ul> 
+					<ul>			
+						<li><h3>Информация</h3></li>
+						<li><a href="#">О нас</a></li>
+						<li><a href="#">Магазины</a></li>
+						<li><a href="#">Вакансии</a></li>
+						<li><a href="#">Отзывы</a></li>
+						<li><a href="#">Контакты</a></li>
+						<li><a href="#">Карта сайта</a></li>
+					</ul>
+					<ul>
+						<li><h3>Интернет-магазин</h3></li>
+						<li><a href="#">Доставка</a></li>
+						<li><a href="#">Оплата</a></li>
+						<li><a href="#">Акции</a></li>
+						<li><a href="#">Возврат товара</a></li>
+					</ul> 
+					<ul>
+						<div class="footer-feedback__phone">			
+							<a href="tel:88005008277">
+							8 (800) 500-82-77<br>
+							8 (495) 664-24-66<br>
+							<span style="font-size: smaller">оформление заказов</span>
+							</a><br>
+
+							<a href="tel:84957899616">
+							8 (800) 500-80-77<br>
+							8 (495) 789-96-16<br>               
+							<span style="font-size: smaller">офис</span>
+							</a><br>    
+						
+							<div><h3>Подпишитесь на акции</h3></div>
+						</div>
+					</ul>
+				</nav>
+				
+			</div>		
+			<div class="footer-copyright">
+			   <p class="copy"> 2021 &copy; SWIM WITH ME. Все права защищены</p>
+			   <p>Политика конфиденциальности</p>
+			</div>
+	</section>
+</footer>
     </body>
 </html>

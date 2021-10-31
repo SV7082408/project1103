@@ -44,11 +44,7 @@ main {
 	flex: 1 0 auto;
 	position: relative;
 }
-footer {
-	padding: 0;
-	flex: none;
-	font-size: 20px;
-}
+
 /* header */
 .mainheader .container {
 	display: flex;
@@ -105,10 +101,11 @@ p {
 	background: #5A98D0;
 	color: #fff;
 	height: 24px;
-	padding: 9px 78px 9px 126px;
+	padding: 8px 42px 8px 82px;
 	position: relative;
 	flex: none;
 	border-radius: 3px;
+
 }
 .topmenu {
 	display: flex;
@@ -244,7 +241,7 @@ p {
 }
 .bg-pattern .container{
 
-	padding: 16px;
+	padding: 16px 0;
 
 }
 
@@ -259,16 +256,16 @@ p {
 
 
 /* aside column */
-.catalog .container {
+/*.catalog .container {
 	padding: 16px 0;
 	overflow: hidden;
-}
+}*/
 .catalog aside {
 	width: 280px;
 	float: left;
 }
 .catalog aside + article {
-	margin-left: 260px;
+	margin-left: 300px;
 }
 .catalog h1 {
 	margin: 16px 0;
@@ -276,6 +273,8 @@ p {
 .accordeon {
 	background: #5A98D0;
 	border-radius: 4px;
+	position: absolute;
+	z-index: 1000;
 }
 .menupoint {
 	display: block;
@@ -286,6 +285,7 @@ p {
 .accordeon .level1 {
 	font-weight: bold;
 	padding-left: 20px;
+	padding-right: 100px;
 }
 .accordeon .level2 {
 	font-style: italic;
@@ -304,6 +304,7 @@ p {
 /* catalog */
 h1 {
 	font: 42px;
+
 }
 .item-desk {
 	display: grid;
@@ -315,6 +316,15 @@ h1 {
 .item {
 	width: 180px;
 	padding: 10px;
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+	color: #1F3F68;
+}
+a:hover {
+	text-decoration: none;
+	color: #1F3F68;
 }
 .item:hover {
 	box-shadow: 0 0 10px #5A98D0;
@@ -347,6 +357,9 @@ h1 {
 	background-image: url('../images/basket_hover.svg');
 }
 /* product */
+.product {
+	margin-left: 300px;
+}
 .article-top {
 	display: flex;
 	gap:50px;
@@ -354,19 +367,23 @@ h1 {
 }
 .gallery_desk {
 	flex: none;
+
 }
 .price_desk {
 	flex: 1 1 auto;
 }
 .price_desk button {
-	background: red;
-	border: none;
+	background: url('../images/basket.svg') no-repeat center;
+	background-size: auto 75%;
+	width: 50px;
+	height: 50px;
+	line-height: 2;
 	cursor: pointer;
-	color: white;
-	text-transform: uppercase;
-	font-size: 24px;
-	padding: 12px 24px;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5);
+	border-color: #5A98D0;
+	border-radius: 100%;
+}
+h2, p {
+	text-align: left;
 }
 .price_desk button:hover {
 	box-shadow: inset 0 2px 5px 0 #5A98D0;
@@ -377,16 +394,12 @@ h1 {
 	line-height: 64px;
 	margin: 0 0 24px;
 }
-.price strong {
-	font-size: 64px;
-}
+
 .bigimage {
 	width: 500px;
-	height: 600px;
+	height: 372px;
 	box-sizing: border-box;
 	padding: 20px;
-	border: 5px solid green;
-	border-radius: 5px;
 	text-align: center;
 }
 .bigimage img {
@@ -399,7 +412,7 @@ h1 {
 }
 .gallery_window { /* прописываем размеры, оверфлоу и позишн именно здесь, так как это непосредственный родитель .gallery_rail */
 	width: 452px;
-	height: 63px;
+	height: 80px;
 	overflow: hidden;
 	position: relative;
 }
@@ -412,17 +425,26 @@ h1 {
 }
 .gallery img {
 	padding: 3px;
-	border: 1px solid green;
+	border: 1px solid #5A98D0;
 	cursor: pointer; /* на этот элемент можно кликнуть */
+}
+.gallery img:hover {
+
+	border: 1px solid #D12057;
+ /* на этот элемент можно кликнуть */
 }
 .gallery span {
 	position: absolute;
-	color: green;
+	color: #5A98D0;
 	display: none; /* неактивные кнопки скрываем */
 	top: 7px;
 	cursor: pointer;
 	font-size: 43px;
 	line-height: 43px;
+}.gallery span:hover {
+
+	color: #D12057;
+
 }
 .gallery span.active {
 	display: block;
@@ -454,7 +476,7 @@ h1 {
 	padding: 50px;
 	background: white;
 	left: 50%;
-	border-radius: 50px;
+	border-radius: 3px;
 }
 .lightbox button {
 	position: absolute;
@@ -536,35 +558,34 @@ h1 {
 	font-size: 24px;
 	line-height: 24px;
 }
+fieldset {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+input {
+	height: 21px;
+}
+
+p > button {
+	background: #5A98D0;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	height: 30px;
+	width: 100px;
+	font-size: 16px;
+}
+p > button:hover {
+	color: #D12057;
+	box-shadow: 0px 0px 7px #5A98D0; 
+}
 /*footer*/
-.footer{	
+.footer {	
 	background: #5A98D0;
 	margin: 0 auto;
 	width: 1170px;
 	color: #fff;
-
-
-}
-hr {
-    border-color: white;
-    opacity: 0.4;
-}
-button {
-	background: #fff;
-	color: #1F3F68;
-	height: 26px;
-	border-radius: 3px;
-	padding: 0;
-	margin: 0;
-	cursor: pointer;
-	letter-spacing: 0.04em;
-}
-footer button {
-	width: 237px;
-	height: 56px;
-	float: right;
-	margin-top: 74px;
-	margin-right: 20px;
 }
 footer p {
 	width: 490px;
@@ -572,23 +593,29 @@ footer p {
 	padding-left: 20px;
 	margin: 0;
 }
-footer .heading {
-	opacity: 1;
-	margin-bottom: 32px;
-}
-footer .copy {
-	opacity: 0.4;
-	margin: 0;
-}
-footer ul {
-	margin: 64px 0;
+
+.footer__wrap .footer-nav{
 	display: flex;
-	justify-content: space-between;
-	padding-left: 100px;
+    align-items: stretch;
+    justify-content: space-evenly;
+	gap: 60px;
+	padding: 0 20px;
 }
-footer li {
-	flex: 0 0 290px;
-	padding-left: 25px;
+.footer-copyright {
+	display: flex;
+	justify-content: space-evenly;
+}
+ul li {
+	list-style-type: none;
+}
+footer h3 {
+	color: white;
+}
+.footer-copyright {
+	font-size: 14px;
+}
+.footer-feedback__phone {
+	margin-top: 62px;
 }
 
 /* datepicker */
@@ -599,12 +626,12 @@ footer li {
 	margin: -250px 0 0 -250px;
 	width: 500px;
 	padding: 50px;
-	background: white;
+	background: linear-gradient(to right, #A4D7ED, #DEC5E3);
 	border-radius: 50px;
 }
 .dp_header {
 	text-align: center;
-	height: 34px;
+	height: 26px;
 }
 .dp_header > b {
     font-size: 26px;
@@ -615,14 +642,15 @@ footer li {
 	width: 32px;
     font-size: 18px;
 	font-weight: bold;
-	line-height: 32px;
-	border: 1px solid #999;
 	cursor: pointer;
-	color: #999;
+	color: #324376;
 }
 .prev:hover, .bigprev:hover, .next:hover, .bignext:hover {
 	color: #000;
 	border-color: #000;
+	border-radius: 5%;
+	box-shadow:
+	1px 1px 1px 2px #324376;
 }
 .prev, .bigprev {
 	float: left;
@@ -637,11 +665,10 @@ footer li {
 	grid-template-columns: repeat(7, 1fr);
 	grid-template-rows: auto;
 	margin-top: 1em;
-	gap: 11px;
+	gap: 0.2em 1em;
 }
 .dp_grid > span {
 	text-align: center;
-	line-height: 60px;
 }
 .headday {
 	font-weight: bold;
@@ -649,19 +676,41 @@ footer li {
 }
 .getter {
 	cursor: pointer;
-	border: 1px solid #000;
+	background: #ddf8e8;
+	border: 2px solid #A6EDE2;
+	border-radius: 5%;
+	box-shadow:
+	2px 2px 2px #324376;
+	padding: 8px;
 }
 .getter:hover {
-	background: #999;
+	background: #A4D7ED;
+	box-shadow:
+	1px 1px 1px 2px #324376;
 }
 .holiday {
-	color: red;
-	border-color: red;
+	color: 	#DC143C;
+	border-color: 	#DC143C;
 }
 .today {
 	color: #fff;
-	background: green;
+	background: #DEC5E3;
 }
 .holiday.today {
-	background: red;
+	background: #DC143C;
+}
+/*contacts*/
+.contacts {
+	border-top: 1px solid #d2d6db;
+	padding: 0 45px 20px 100px;
+
+}
+h3, p {
+	color: #1F3F68;
+}
+.flex-row {
+	display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+	gap: 180px;
 }
