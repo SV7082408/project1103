@@ -270,6 +270,32 @@ function sliderRun(direction) {
         slideFlag = false;
     });
 }
+function slider2Run(direction) {
+    if (slideFlag) return;
+    slideFlag = true;
+    let hlp = $('.slider_block2').index($('.slider_block2.curr2'));
+    let width = $('.slider_block2.curr2').width();
+    let next;
+    if (direction == 'toleft2') {
+        next = hlp + 1;
+        if (next > $('.slider_block2').length - 1) next -= $('.slider_block2').length;
+        $('.slider_block2').eq(next).css('left2', width + 'px').addClass('curr2');
+        next = '-=' + width;
+    } else if (direction == 'toright2') {
+        next = hlp - 1;
+        if (next < 0) next += $('.slider_block2').length;
+        $('.slider_block').eq(next).css('left2', -width + 'px').addClass('curr2');
+        next = '+=' + width;
+    } else {
+        console.error('invalid direction');
+        slideFlag = false;
+        return;
+    }
+    $('.slider_block.curr2').animate({left: next}, 2000, function() {
+        $('.slider_block2').eq(hlp).removeClass('curr2').prop('style','');
+        slideFlag = false;
+    });
+}
 function retimer() {
     let limit = new Date($('.retaimer').data('fordate'));
     let now = new Date();

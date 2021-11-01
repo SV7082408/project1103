@@ -85,4 +85,15 @@
             sliderRun('toright');
         });
     }
+	if ($('.slider_block2').length) {
+        setInterval(function(){
+            slider2Run('toleft2');
+        }, 4000);
+        $('.slider2 .to_left2').click(function(){
+            sliderRun('toleft2');
+        });
+        $('.slider2 .to_right2').click(function(){
+            sliderRun('toright2');
+        });
+    }
 })
