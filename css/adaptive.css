@@ -17,7 +17,7 @@
 	 justify-content: flex-start;
 	}
 	.topmenu1 {
-		display: none;
+		gap: 60px;
 	}
 	.slider {
 		display: none;
@@ -79,6 +79,13 @@
 	background-image: url('../my_images/arrowrighthover.svg');
 	z-index: 2;
 }
+.gal {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+	padding: 0px;
+    margin: 0px;
+	}
 }
 @media screen and (max-width: 1050px) {
 	.container {
@@ -92,6 +99,9 @@
 	}
 	.catmenu {
 		font-size: 16px;
+	}
+	.topmenu1 {
+		display: none;
 	}
 	.footer__wrap .footer-nav {
 	width: 800px;
@@ -121,15 +131,7 @@
 	padding: 0px;
     margin: 0px;
 	}
-
-.gal {
-		display: flex;
-    align-items: center;
-    flex-direction: column;
-	padding: 0px;
-    margin: 0px;
-	}
-	.footer__wrap .footer-nav {
+.footer__wrap .footer-nav {
 	width: 500px;
 	display: flex;
     align-items: left;
@@ -140,12 +142,21 @@
 	}
 }
 @media screen and (max-width: 650px) {
+	
+.topheader .container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0 auto 20px auto;
+	width: 400px;
+	height: auto;
+}	
+	
 .container {
 	width: 400px;
 	display: flex;
-    align-items: left;
 	flex-wrap: wrap;
-		}	
+}	
 .topmenu {
 	padding-top: 60px;
 }
@@ -162,6 +173,9 @@
 	font-size: 9px;
 
 }
+.item-desk {
+    grid-template-columns: repeat(2, 200px);
+}
 .retaimer {
 	border-left: 0px;
 
@@ -172,7 +186,8 @@
 }
 .accordeon {
 	top: 0px;
-	}	
+	}
+
 }
 @media screen and (max-width: 500px) {
 .footer__wrap .footer-nav {

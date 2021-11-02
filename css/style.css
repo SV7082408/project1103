@@ -35,6 +35,7 @@ body {
 	margin: 0 auto;
 	width: 1170px;
 }
+
 header {
 	flex: none;
 	color: #1F3F68;
@@ -44,7 +45,34 @@ main {
 	flex: 1 0 auto;
 	position: relative;
 }
-
+/* topheader */
+.topheader {
+    background: #5A98D0;
+}
+.topheader .container {
+	display: flex;
+	height: 43px;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+.header-top__social{
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+.header-top__social img {
+	width: 25px;
+	height: 25px;
+}
+.topheader p {
+	margin: 0 4px;
+}
+.personal {
+	display: flex;
+	flex-direction: row;
+}
 /* header */
 .mainheader .container {
 	display: flex;
@@ -68,21 +96,9 @@ p {
 	flex: none;
 	width: 24px;
 	height: 31px;
-	background: url('../images/enter.svg') left top no-repeat;
-}
-.headerlink:nth-child(5) {
-	background-image: url('../images/heart.svg');
-}
-.headerlink:last-child {
-	background-image: url('../images/basket.svg');
+	background: url('../images/basket.svg') left top no-repeat;
 }
 .headerlink:hover {
-	background-image: url('../images/enter_hover.svg');
-}
-.headerlink:nth-child(5):hover {
-	background-image: url('../images/heart_hover.svg');
-}
-.headerlink:last-child:hover {
 	background-image: url('../images/basket_hover.svg');
 }
 .searchline {
@@ -107,12 +123,19 @@ p {
 	border-radius: 3px;
 
 }
-.topmenu, .topmenu1 {
+.topmenu {
 	display: flex;
 	align-items: center;
 	font-size: 20px;
 	gap: 80px;
-	padding-bottom: 2px;
+	padding-bottom: 5px;
+}
+.topmenu1 {
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	gap: 80px;
+	padding-bottom: 1px;
 }
 .topmenu1 a {
 	color: #1F3F68;
@@ -179,6 +202,13 @@ p {
 	right: 0;
 }
 /* slider */
+/*.slider2 {
+	display: none;
+}*/
+
+.slider {
+	display: block;
+}
 .slider2 {
 	display: none;
 }
@@ -192,21 +222,35 @@ p {
 	padding: 16px 78px;
 	position: relative;
 }
-.slider_desk {
+.slider2 .container,
+.slider2_desk,
+.slider2_block {
+	width: 400px;
+	height: 440px;
+}
+.slider2 .container {
+	padding: 16px 78px;
+	position: relative;
+}
+.slider_desk,
+.slider2_desk {
 	overflow: hidden;
 	position: relative;
 	background: #fff;
 }
-.slider_block {
+.slider_block,
+.slider2_block {
 	position: absolute;
 	left: 0;
 	top: 0;
 	z-index: -1;
 }
-.slider_block.curr {
+.slider_block.curr, 
+.slider2_block.curr {
 	z-index: 1;
 }
-.slider button {
+.slider button,
+.slider2 button {
 	position: absolute;
 	opacity: 0.8;
 	border: none;
@@ -221,29 +265,50 @@ p {
 	background-image: url('../my_images/arrowleft.svg');
 	z-index: 2;
 }
+
+
 .slider .to_right {
 	left: calc(50% + 480px);
 	background-image: url('../my_images/arrowright.svg');
 	z-index: 2;
 }
-.slider .to_left:hover{
+
+.slider .to_left:hover {
 	background-image: url('../my_images/arrowlefthover.svg');
 	z-index: 2;
 }
 
-.slider .to_right:hover{
-	left: calc(50% + 480px);
+.slider .to_right:hover {
+	background-image: url('../my_images/arrowrighthover.svg');
+	z-index: 2;
+}
+.slider2 .to_left {
+	left: calc(50% + 30px);
+	background-image: url('../my_images/arrowleft.svg');
+	z-index: 2;
+}
+.slider2 .to_right {
+	left: calc(50% + 130px);
+	background-image: url('../my_images/arrowright.svg');
+	z-index: 2;
+}
+
+.slider2 .to_left:hover {
+	background-image: url('../my_images/arrowlefthover.svg');
+	z-index: 2;
+}
+.slider2 .to_right:hover {
 	background-image: url('../my_images/arrowrighthover.svg');
 	z-index: 2;
 }
 /*main*/
 
 .bg-pattern {
-	background-image: url('../my_images/bg-pattern.jpg');
+	background: url('../my_images/bg-pattern.jpg') center bottom no-repeat;
 }
 .bg-pattern .container{
 
-	padding: 16px 0;
+magrin-top: -20px;
 
 }
 
@@ -251,8 +316,16 @@ p {
 
 .gal {
 	display: flex;
-	 justify-content: space-between;
+	justify-content: space-between;
+    overflow: hidden; 
 }
+.gal img {
+    transition: 0.5s; 
+    display: block; 
+   }
+.gal img:hover {
+    transform: scale(1.1);
+   }
 
 
 
@@ -268,6 +341,7 @@ p {
 }
 .catalog aside + article {
 	margin-left: 300px;
+	padding-bottom: 20px;
 }
 .catalog h1 {
 	margin: 16px 0;
@@ -420,7 +494,7 @@ h2, p {
 }
 .gallery_rail {
 	display: flex;
-	gap: 4px;
+	gap: 6px;
 	position: absolute; /* движение обеспечиваем за счет свойства left */
 	top: 0;
 	left: 0;
@@ -439,11 +513,12 @@ h2, p {
 	position: absolute;
 	color: #5A98D0;
 	display: none; /* неактивные кнопки скрываем */
-	top: 7px;
+	top: 19px;
 	cursor: pointer;
-	font-size: 43px;
-	line-height: 43px;
-}.gallery span:hover {
+	font-size: 42px;
+	line-height: 42px;
+}
+.gallery span:hover {
 
 	color: #D12057;
 

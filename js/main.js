@@ -75,25 +75,30 @@
     }
     
     if ($('.slider_block').length) {
+        slideFlag['slider'] = false;
+        slidePointer['slider'] = 0;
+        $('.slider_block.curr').eq(1).css('left', $('.slider_block.curr').width() + 'px');
         setInterval(function(){
-            sliderRun('toleft');
+            sliderRun('slider', 'toleft');
         }, 4000);
         $('.slider .to_left').click(function(){
-            sliderRun('toleft');
+            sliderRun('slider', 'toleft');
         });
         $('.slider .to_right').click(function(){
-            sliderRun('toright');
+            sliderRun('slider', 'toright');
         });
     }
-	if ($('.slider_block2').length) {
+    if ($('.slider2_block').length) {
+        slideFlag['slider2'] = false;
+        slidePointer['slider2'] = 0;
         setInterval(function(){
-            slider2Run('toleft2');
+            sliderRun('slider2','toleft');
         }, 4000);
-        $('.slider2 .to_left2').click(function(){
-            sliderRun('toleft2');
+        $('.slider2 .to_left').click(function(){
+            sliderRun('slider2','toleft');
         });
-        $('.slider2 .to_right2').click(function(){
-            sliderRun('toright2');
+        $('.slider2 .to_right').click(function(){
+            sliderRun('slider2','toright');
         });
     }
 })

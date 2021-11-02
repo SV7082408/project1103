@@ -1,4 +1,5 @@
-﻿let slideFlag = false;
+﻿let slideFlag = {};
+let slidePointer = {};
 let ajaxFlag = false;
 let gapFlag = false; // флаг нужен для блокировки новых запусков функции во время, когда она уже запущена
 let galstep, galgap; // объявляем переменные глобально, чтобы видеть их как из функции, так и вне ее
@@ -244,56 +245,38 @@ function galSlide(direction) {
         gapFlag = false; // опускаем флаг - наш вызов отработал, можно делать новые вызовы
     });
 }
-function sliderRun(direction) {
-    if (slideFlag) return;
-    slideFlag = true;
-    let hlp = $('.slider_block').index($('.slider_block.curr'));
-    let width = $('.slider_block.curr').width();
+function sliderRun(slideclass, direction) {
+    if (slideFlag[slideclass]) return;
+    slideFlag[slideclass] = true;
+    let width = $('.' + slideclass + '_block.curr').width();
     let next;
-    if (direction == 'toleft') {
-        next = hlp + 1;
-        if (next > $('.slider_block').length - 1) next -= $('.slider_block').length;
-        $('.slider_block').eq(next).css('left', width + 'px').addClass('curr');
-        next = '-=' + width;
-    } else if (direction == 'toright') {
-        next = hlp - 1;
-        if (next < 0) next += $('.slider_block').length;
-        $('.slider_block').eq(next).css('left', -width + 'px').addClass('curr');
+    let prev;
+    if (direction == 'toright') {
+        next = slidePointer[slideclass] - 1;
+        prev = slidePointer[slideclass] + $('.' + slideclass + '_block.curr').length - 1;
+        slidePointer[slideclass]--;
+        if (slidePointer[slideclass] < 0) slidePointer[slideclass] += $('.' + slideclass + '_block').length;
+        if (next < 0) next += $('.' + slideclass + '_block').length;
+        if (prev > $('.' + slideclass + '_block').length - 1) prev -= $('.' + slideclass + '_block').length;
+        $('.' + slideclass + '_block').eq(next).css('left', -width + 'px').addClass('curr');
+        $('.' + slideclass + '_block').eq(prev).addClass('eliminate');
+        //$('.' + slideclass + ' .points span').eq(next).addClass('active');
         next = '+=' + width;
     } else {
-        console.error('invalid direction');
-        slideFlag = false;
-        return;
-    }
-    $('.slider_block.curr').animate({left: next}, 2000, function() {
-        $('.slider_block').eq(hlp).removeClass('curr').prop('style','');
-        slideFlag = false;
-    });
-}
-function slider2Run(direction) {
-    if (slideFlag) return;
-    slideFlag = true;
-    let hlp = $('.slider_block2').index($('.slider_block2.curr2'));
-    let width = $('.slider_block2.curr2').width();
-    let next;
-    if (direction == 'toleft2') {
-        next = hlp + 1;
-        if (next > $('.slider_block2').length - 1) next -= $('.slider_block2').length;
-        $('.slider_block2').eq(next).css('left2', width + 'px').addClass('curr2');
+        next = slidePointer[slideclass] + $('.' + slideclass + '_block.curr').length;
+        prev = slidePointer[slideclass];
+        slidePointer[slideclass]++;
+        if (slidePointer[slideclass] > $('.' + slideclass + '_block').length - 1) slidePointer[slideclass] -= $('.' + slideclass + '_block').length;
+        if (next > $('.' + slideclass + '_block').length - 1) next -= $('.' + slideclass + '_block').length;
+        $('.' + slideclass + '_block').eq(next).css('left', (width * $('.' + slideclass + '_block.curr').length) + 'px').addClass('curr');
+        $('.' + slideclass + '_block').eq(prev).addClass('eliminate');
+        //$('.' + slideclass + ' .points span').eq(next).addClass('active');
         next = '-=' + width;
-    } else if (direction == 'toright2') {
-        next = hlp - 1;
-        if (next < 0) next += $('.slider_block2').length;
-        $('.slider_block').eq(next).css('left2', -width + 'px').addClass('curr2');
-        next = '+=' + width;
-    } else {
-        console.error('invalid direction');
-        slideFlag = false;
-        return;
     }
-    $('.slider_block.curr2').animate({left: next}, 2000, function() {
-        $('.slider_block2').eq(hlp).removeClass('curr2').prop('style','');
-        slideFlag = false;
+    //$('.' + slideclass + ' .points span').eq(hlp).removeClass('active');
+    $('.' + slideclass + '_block.curr').animate({left: next}, 2000, function() {
+        $('.' + slideclass + '_block.eliminate').removeClass('curr').removeClass('eliminate');
+        slideFlag[slideclass] = false;
     });
 }
 function retimer() {
